@@ -1,0 +1,15 @@
+fetch titles from twitch api
+parse each title into space-delimited tokens
+each title has an array in a 2d structure
+each title array contains its tokens
+iterate through each token, create a vertex in a weighted directed graph
+token i's vertex is given an edge to token i+1 with weight n
+n being the number of times the edge is drawn.
+if token i+1 DNE (token i is the last), store i into an array for generating title length
+
+generation:
+choose a title length
+choose a starting token
+choose the next token based on the edges that the token points to
+iterate until length has been fulfilled
+print
