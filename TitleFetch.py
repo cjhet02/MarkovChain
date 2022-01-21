@@ -20,7 +20,5 @@ head = {
     'Authorization' : "Bearer " + access_token
 }
 
-r = rq.get(URL, headers = head).json()
+titles = rq.get(URL, headers = head).json()['title']
 
-for id in r['data']:
-    print(id['title'])
