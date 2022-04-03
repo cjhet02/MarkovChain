@@ -26,10 +26,4 @@ words = ""
 for video in titles['data']:
     words += json.dumps(video['title'])
 
-r = rq.post("https://api.deepai.org/api/text-generator",
-    data={
-        'text': words,
-    },
-    headers={'api-key': 'quickstart-QUdJIGlzIGNvbWluZy4uLi4K'}
-)
-print(r.json())
+print(words)

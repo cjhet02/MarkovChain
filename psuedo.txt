@@ -13,3 +13,56 @@ choose a starting token
 choose the next token based on the edges that the token points to
 iterate until length has been fulfilled
 print
+
+function main(){
+
+}
+
+function genMatrix(string input){
+    M = [][]
+    string last = input[0] //the first token in the input, not the first character 
+    Map Tokens.insert(last)
+    tempArr = []
+    M.push_back(tempArr)
+
+    for each token from 1 to n in input
+        if !Tokens[token] //if the token is not already in the map
+            int ind = Tokens.last.index + 1 //add the new token and its index to the map
+            Tokens.insert(token)
+            Tokens[token].index = ind
+
+            for i from 0 to length(M) //add a column to the matrix
+                M[i].push_back(0)
+        
+            temp = [for i from 0 to ind] //add a row to the matrix
+            M.push_back(temp)
+
+        lastInd = Tokens[last].index
+        ind = Tokens[token].index
+        M[lastInd][ind] += 1        //increment transition value
+        Tokens[last].children++     //increment parent's child count
+
+        last = token //reset the last string for the next iteration
+        
+    for i from 0 to length(M)   //calculate probabilites for each nonzero cell in matrix
+        for j from 0 to length(M[i])
+            if M[i][j] != 0
+                M[i][j] = M[i][j] / Tokens[i].count
+}
+
+function chooseNext(vector<cell> sub){ //sub being a sub-vector from M
+    choice = rand(1 - 100)
+    probSum = 0
+    for all i from 0 to length(sub)
+        probSum += sub[i].prob * 100
+        if choice < probSum
+            return sub[i].string
+}
+
+function genText(matrix M, int length){
+    first = rand(M.size()) //pick a random first word from matrix
+    curWord = M[first].string
+    for i from 1 to length
+        print(curWord)
+        curWord = chooseNext(M[tokens[curWord]])
+}
