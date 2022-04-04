@@ -1,0 +1,97 @@
+Enter cleaned data file name: due - 1: to - 100% 
+to - 7: the - 14.2857% check - 14.2857% try - 14.2857% cleaned.txt - 14.2857% test - 42.8571% 
+the - 10: nature - 10% project - 10% pre-packaged - 10% adjacency - 10% actual - 10% end - 10% test#.txt - 10% dataclean.py - 10% complete - 10% other - 10% 
+nature - 1: of - 100% 
+of - 5: the - 40% vol - 20% edgar - 20% this - 20% 
+project - 1: , - 100% 
+, - 3: the - 33.3333% it - 33.3333% just - 33.3333% 
+pre-packaged - 1: tests - 100% 
+tests - 1: are - 100% 
+are - 2: only - 50% different - 50% 
+only - 2: useful - 50% unique - 50% 
+useful - 1: to - 100% 
+check - 1: the - 100% 
+adjacency - 1: lists - 100% 
+lists - 1: . - 100% 
+. - 9: the - 33.3333% it - 11.1111% test1.txt - 11.1111% test2.txt - 11.1111% test3.txt - 11.1111% 1 - 11.1111% test - 11.1111% 
+actual - 1: generated - 100% 
+generated - 1: output - 100% 
+output - 1: at - 100% 
+at - 1: the - 100% 
+end - 1: will - 100% 
+will - 2: always - 50% take - 50% 
+always - 1: be - 100% 
+be - 1: different - 100% 
+different - 2: . - 50% training - 50% 
+test#.txt - 1: files - 100% 
+files - 2: are - 50% that - 50% 
+training - 1: data - 100% 
+data - 3: files - 33.3333% . - 33.3333% to - 33.3333% 
+that - 2: i've - 50% have - 50% 
+i've - 1: included - 100% 
+included - 2: after - 50% if - 50% 
+after - 1: cleaning - 100% 
+cleaning - 1: them - 100% 
+them - 1: with - 100% 
+with - 2: a - 50% only - 50% 
+a - 7: small - 14.2857% file - 14.2857% few - 28.5714% sizeable - 14.2857% large - 14.2857% cleaned - 14.2857% 
+small - 1: python - 100% 
+python - 1: script - 100% 
+script - 2: . - 50% is - 50% 
+dataclean.py - 1: script - 100% 
+is - 6: included - 16.6667% designed - 16.6667% meant - 33.3333% a - 33.3333% 
+if - 1: you - 100% 
+you - 1: would - 100% 
+would - 1: like - 100% 
+like - 1: to - 100% 
+try - 1: your - 100% 
+your - 1: own - 100% 
+own - 1: data - 100% 
+it - 2: takes - 50% is - 50% 
+takes - 1: in - 100% 
+in - 2: a - 50% common - 50% 
+file - 2: called - 50% , - 50% 
+called - 1: testin.txt - 100% 
+testin.txt - 1: and - 100% 
+and - 1: outputs - 100% 
+outputs - 1: cleaned - 100% 
+cleaned - 2: data - 50% version - 50% 
+cleaned.txt - 1: . - 100% 
+test1.txt - 1: is - 100% 
+designed - 1: to - 100% 
+test - 4: sentences - 25% a - 50% 3 - 25% 
+sentences - 2: with - 50% that - 50% 
+unique - 1: words - 100% 
+words - 3: . - 33.3333% in - 33.3333% of - 33.3333% 
+test2.txt - 1: is - 100% 
+meant - 2: to - 100% 
+few - 2: sentences - 50% words - 50% 
+have - 1: a - 100% 
+common - 1: . - 100% 
+test3.txt - 1: is - 100% 
+sizeable - 1: chunk - 100% 
+chunk - 1: of - 100% 
+vol - 1: . - 100% 
+1 - 1: of - 100% 
+complete - 1: words - 100% 
+edgar - 1: allan - 100% 
+allan - 1: poe - 100% 
+poe - 1: , - 100% 
+large - 1: dataset - 100% 
+dataset - 1: . - 100% 
+3 - 1: will - 100% 
+take - 1: significantly - 100% 
+significantly - 1: longer - 100% 
+longer - 1: than - 100% 
+than - 1: the - 100% 
+other - 1: two - 100% 
+two - 1: test4.txt - 100% 
+test4.txt - 1: is - 100% 
+version - 1: of - 100% 
+this - 1: file - 100% 
+just - 1: for - 100% 
+for - 1: fun - 100% 
+fun - 1: . - 100% 
+
+Enter desired sentence length: 
+Enter desired number of sentences: 

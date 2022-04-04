@@ -1,0 +1,14 @@
+due to the nature of the project , the pre-packaged tests are only useful to check the adjacency lists .
+the actual generated output at the end will always be different .
+the test#.txt files are different training data files that i've included after cleaning them with a small python script .
+the dataclean.py script is included if you would like to try your own data .
+it takes in a file called testin.txt and outputs cleaned data to cleaned.txt .
+
+test1.txt is designed to test sentences with only unique words .
+
+test2.txt is meant to test a few sentences that have a few words in common .
+
+test3.txt is a sizeable chunk of vol . 1 of the complete words of edgar allan poe , it is meant to test a large dataset .
+test 3 will take significantly longer than the other two
+
+test4.txt is a cleaned version of this file , just for fun .

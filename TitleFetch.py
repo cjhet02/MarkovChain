@@ -1,11 +1,13 @@
+#WORK IN PROGRESS
+
 from os import access
 import requests as rq
 import json
 
 streamer = 'loltyler1'
 authURL = 'https://id.twitch.tv/oauth2/token'
-Client_ID = '6dzwm0ri8t01u98icpibehfw5boqpt'
-Secret = '92u3zlx0pynkz92u4v5lq3z55lvcr2'
+Client_ID = '---------------------------'
+Secret = '-------------------------'
 
 AuthParams = {'client_id' : Client_ID, 'client_secret' : Secret, 'grant_type' : 'client_credentials'}
 

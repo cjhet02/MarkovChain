@@ -2,9 +2,13 @@ file = open("testIn.txt", "r", encoding="UTF-8", errors='replace')
 data = file.read()
 
 data = data.lower()
-punc = [". ", ", ", "? ", "! ", "; ", ": "]
+punc = [".", ", ", "? ", "! ", "; ", ": ", "~"]
 for char in punc:
-    data = data.replace(char, " " + char)
+    data = data.replace(char, " " + char + " ")
+
+bad = ["™", "@"]
+for char in bad:
+    data = data.replace(char, "")
 
 print(data)
 out = open("cleaned.txt", "w", errors='replace')

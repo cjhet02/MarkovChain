@@ -92,19 +92,19 @@ void genText(vector<vector<cell>> M, vector<word> tokens, int length) {
     for (int i = 0; i < length; i++) {
         cout << curWord << " ";
         int curInd = findTok(tokens, curWord);
-        int probSum = 0;
+        float probSum = 0.0;
         int choice = rand() % 106;  // Over 100 to give a chance that the chain picks a random word
 
         if (M[curInd].size() == 0 || choice > 100) { // if no transitions available or creativity is chosen
             choice = rand() % 100;
-            curWord = tokens[choice].token;
 
             for (int j = 0; j < (int)tokens.size(); j++) { //pick a token from the list, weighted by occurrences
-                int tokProb = tokens[j].occ / tokens.size();
+                float tokProb = tokens[j].occ / tokens.size();
                 probSum += (tokProb * 100);
 
                 if (choice < probSum) {
                     curWord = tokens[j].token;
+                    break;
                 }
             }
         }
@@ -114,6 +114,7 @@ void genText(vector<vector<cell>> M, vector<word> tokens, int length) {
 
                 if (choice < probSum) {
                     curWord = M[curInd][j].token;
+                    break;
                 }
             }
         }

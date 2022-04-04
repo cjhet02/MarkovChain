@@ -1,68 +1,76 @@
-fetch titles from twitch api
-parse each title into space-delimited tokens
-each title has an array in a 2d structure
-each title array contains its tokens
-iterate through each token, create a vertex in a weighted directed graph
-token i's vertex is given an edge to token i+1 with weight n
-n being the number of times the edge is drawn.
-if token i+1 DNE (token i is the last), store i into an array for generating title length
+function findTok(subVec, tok){
+    for i from 0 to length(subVec)
+        if subVec[i].token == tok  
+            return i
 
-generation:
-choose a title length
-choose a starting token
-choose the next token based on the edges that the token points to
-iterate until length has been fulfilled
-print
-
-function main(){
-
+    return -1
 }
 
-function genMatrix(string input){
-    M = [][]
-    string last = input[0] //the first token in the input, not the first character 
-    Map Tokens.insert(last)
-    tempArr = []
-    M.push_back(tempArr)
+function genMatrix(string input, M, tokens){
+    last = ""
+    
+    while !input.end() //populate matrix
+        tok = ""
 
-    for each token from 1 to n in input
-        if !Tokens[token] //if the token is not already in the map
-            int ind = Tokens.last.index + 1 //add the new token and its index to the map
-            Tokens.insert(token)
-            Tokens[token].index = ind
+        do
+            input >> tok
+        while tok == "" AND !input.end()
 
-            for i from 0 to length(M) //add a column to the matrix
-                M[i].push_back(0)
+        if tok == "" //trailing whitespaces at the end of the file will slip through the do-while
+            break
+
+        tokInd = findTok(tokens, tok) //find index of the current token
+
+        if tokInd == -1
+            newWord = {length(M), 0, tok}
+            tokens.push(newWord)
+            tokInd = length(M)
+            M.push([])
+            
+        parentVec = findTok(tokens, last)
+
+        if parentVec != -1
+            ind = inVec(M[parentVec], tok)
+
+            if ind != -1
+                M[parentVec][ind].prob++
+            else
+                M[parentVec].push({1.0, tok})
+
+            tokens[parentVec].occurrences++
         
-            temp = [for i from 0 to ind] //add a row to the matrix
-            M.push_back(temp)
+        last = tok
 
-        lastInd = Tokens[last].index
-        ind = Tokens[token].index
-        M[lastInd][ind] += 1        //increment transition value
-        Tokens[last].children++     //increment parent's child count
-
-        last = token //reset the last string for the next iteration
-        
-    for i from 0 to length(M)   //calculate probabilites for each nonzero cell in matrix
+    for i from 0 to length(M)   //calculate transition probabilites
         for j from 0 to length(M[i])
-            if M[i][j] != 0
-                M[i][j] = M[i][j] / Tokens[i].count
+            M[i][j].prob = M[i][j].prob / tokens[i].occurrences
 }
 
-function chooseNext(vector<cell> sub){ //sub being a sub-vector from M
-    choice = rand(1 - 100)
-    probSum = 0
-    for all i from 0 to length(sub)
-        probSum += sub[i].prob * 100
-        if choice < probSum
-            return sub[i].string
-}
+function genText(M, tokens, size){
+    first = rand(length(M)) //pick a random first word from matrix
+    choice = 0
+    curWord = M[first].token
 
-function genText(matrix M, int length){
-    first = rand(M.size()) //pick a random first word from matrix
-    curWord = M[first].string
-    for i from 1 to length
+    for i from 0 to size
         print(curWord)
-        curWord = chooseNext(M[tokens[curWord]])
+        curIndex = findTok(tokens, curWord)
+        probSum = 0.0
+        choice = rand(100)
+
+        if length(M[curIndex]) == 0 //if there are no transitions available
+            for j from 0 to length(tokens)
+                probsum += 100 * (tokens[j].occurrences / length(tokens))
+
+                if choice < probsum
+                    curWord = tokens[j].token
+                    break
+        else
+            for j from 0 to length(M[curIndex])
+                probsum += M[curIndex][j].prob * 100
+
+                if choice < probsum
+                    curWord = M[curIndex][j].token
+                    break
+    
+    print(curWord)
 }
